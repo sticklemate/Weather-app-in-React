@@ -6,13 +6,13 @@ render(){
 
 return (
 <div className="weather-form">
-<form onSubmit={this.props.getWeather}>
+<form datatest-id="form" onSubmit={this.props.getWeather}>
 
     <span className="input"><input className="input-city" type="text" name="city" placeholder=" Enter the City name"></input>
     <span></span>
     </span>
     
-    <p><button>Get Weather</button></p>
+    <p><button >Get Weather</button></p>
 
 </form>
 </div>

@@ -238,9 +238,15 @@ text-align: center;
     padding: .5em 2em;
     margin-top: 1em;
     font-size: 1.1em;
-   
+   color:black;
   transition: .3s;
 
 }
 
+#error-msg
+{
+
+  color: white;
+
+}
 

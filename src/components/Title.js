@@ -8,7 +8,7 @@ render(){
 return(
 <div>
 
-<h2>Weather app - Australia <span id="weather-emoji">&#9925;</span></h2>
+<h2>Weather app - Australia <span id="weather-emoji" role="img">&#9925;</span></h2>
 <p id="title-para">Find out temperature conditions and more...</p>
 </div>
 );

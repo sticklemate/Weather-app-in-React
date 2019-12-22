@@ -8,7 +8,7 @@ return (
 <div className="weather-form">
 <form onSubmit={this.props.getWeather}>
 
-    <span className="input"><input className="input-city" type="text" name="city" placeholder=" Enter City"></input>
+    <span className="input"><input className="input-city" type="text" name="city" placeholder=" Enter the City name"></input>
     <span></span>
     </span>
     

@@ -3,71 +3,82 @@ import React from "react";
 import Title from "./components/Title";
 import Form from "./components/Form";
 import Weather from "./components/Weather";
-// import * as JSONdata from "./data.json"
+
 
 const API_KEY="7e070ed26fa13b00fb40a9901670b645";
 const country="AUS";
 
 class App extends React.Component {
 
-  //Use of state Management for weather attributes
-  state = {
+        //Use of state Management for weather attributes
+        state = {
 
-  city: undefined,
-  temperature: undefined,
-  humidity: undefined,
-  description: undefined,
-  error: undefined
-  
-  }
+        city: undefined,
+        temperature: undefined,
+        humidity: undefined,
+        description: undefined,
+        error: undefined
+        
+        }
 
-//Function  call on button click
-getWeather = async (e) => {
-e.preventDefault();
+    //Function  call on button click
+    getWeather = async (e) => {
+    e.preventDefault();
 
-const city = e.target.elements.city.value;
+    const city = e.target.elements.city.value;
 
-//Make API call to openweather.com with provided API keys to get the latest weather data
-//Or Alternatively use the JSON file provided
-const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
+    //Make API call to openweather.com with provided API keys to get the latest weather data
+    //Or Alternatively use the JSON file provided
+    const api_call = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${API_KEY}`);
 
-const data = await api_call.json();
-
-//Convert temperature from Kelvin to Celsius
-function temperatureConverter(valNum) {
-  valNum = parseFloat(valNum);
-  data.main.temp=Math.floor(valNum-273.15);
-}
-temperatureConverter(data.main.temp);
+    const data = await api_call.json();
+    
 
 
-//Set states for all weather data if City is provided otherwise default to undefined
-if(city)
-{
-console.log(data);
+        //Convert temperature from Kelvin to Celsius
+        
+        if(data.main){
+          temperatureConverter(data.main.temp);
+          
+        function temperatureConverter(valNum) {
+          valNum = parseFloat(valNum);
+          data.main.temp=Math.floor(valNum-273.15);
+        }
+      }
+      
 
-this.setState({
-  
-  temperature:data.main.temp, 
-  city:data.name,
-  humidity:data.main.humidity,
-  description:data.weather[0].description,
-  error:""
 
-});
+          //Set states for all weather data if valid City is provided otherwise default to undefined
+          if(city && data.main)
+          {
+              console.log(data);
 
-}
+              this.setState({
+                
+                
+                temperature:data.main.temp, 
+                city:data.name,
+                humidity:data.main.humidity,
+                description:data.weather[0].description,
+                error:""
+                
+              });
+              
+          }
 
-//If no city is provided as Input
-else {
-  this.setState({
-  
-    error:"Please enter a City name"
-  
-  });
+          //If no valid city is provided as Input
+          else {
+              this.setState({
+                temperature:undefined, 
+                city:data.undefined,
+                humidity:undefined,
+                description:undefined,
+                error:"Please enter a valid City name!"
+              
+              });
 
-}
-}
+          }
+          }
 
 render(){
 

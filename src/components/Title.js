@@ -8,8 +8,8 @@ render(){
 return(
 <div>
 
-<h1>Weather Finder app</h1>
-<p>Find out temperateure conditions and more...</p>
+<h2>Weather app - Australia <span id="weather-emoji">&#9925;</span></h2>
+<p id="title-para">Find out temperature conditions and more...</p>
 </div>
 );
 

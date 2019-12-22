@@ -1,38 +1,246 @@
-.App {
+body{
+  margin: 0;
+  padding: 0;
+  background: #3a899a;
+  font-family: 'Raleway';
+  color: #fff;
+}
+h2{
+    text-align: center;
+    background: #8042b5;
+    background: rgba(55,55,70,.25);
+    background: radial-gradient(rgba(55,55,70,.25), rgba(55,55,70,.5)); 
+    padding: 1em;
+}
+
+#title-para{
   text-align: center;
+
+}
+.aside-1 div .span {
+    display: inline-block;
+    min-height: 100px;
+    width: 100%;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.aside-1 div .span:first-child {
+    border-top: none;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.aside-1 div .span .icon {
+  font-size: 3em;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+button{
+    border: none;
+    background: inherit;
+    font-size: inherit;
+    font-family: inherit;
+    color: inherit;
+    border: 1px solid rgba(255, 255, 255, 0.7);
+    padding: .5em 2em;
+    margin-top: 1em;
+    font-size: 1.1em;
+   cursor: pointer;
+  transition: .3s;
+}
+
+button:hover {
+  background: rgba(255, 255, 255, 0.25);
+}
+
+.taper_line { 
+    margin: 25px 0;
+    height: 1px;
+    background: black;
+    background: -webkit-gradient(linear, 0 0, 100% 0, from(transparent), to(transparent), color-stop(50%, #fff));
+}
+
+h1, h2, h3 {
+  margin: .25em 0;
+}
+
+h3 {
+  font-size: 1em;
+  line-height: 1.25em;
+  margin: 0;
+}
+.fcc{
+  font-family: 'Roboto Mono', monospace;
+  color: #006400;
+  text-decoration: none;
+  text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
+}
+.fcc:hover{text-decoration: underline;}
+
+
+.bg {
+  top: 0;
+  position: fixed;
+  z-index: -1;
+  box-sizing: border-box;
+  display: block;
+  width: 100%;  
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+  /*background: url('https://www.virgin-vacations.com/shared/north-america/gallery/banff.jpg') center center; */
+  background-size: cover;
+  background: #fc00ff; /* fallback for old browsers */
+background: -webkit-linear-gradient(to left, #fc00ff , #00dbde); /* Chrome 10-25, Safari 5.1-6 */
+background: linear-gradient(to left, #fc00ff , #00dbde); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background-size: 800% 800%;
+
+-webkit-animation: AnimationName 30s ease infinite;
+-moz-animation: AnimationName 30s ease infinite;
+animation: AnimationName 30s ease infinite;
+}
+@-webkit-keyframes AnimationName {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+@keyframes AnimationName { 
+    0%{background-position:14% 0%}
+    50%{background-position:87% 100%}
+    100%{background-position:14% 0%}
+}
+
+.wrapper {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  -webkit-flex-flow: row wrap;
+  flex-flow: row wrap;
+  font-weight: bold;
+  text-align: center;
+  min-height: 80vh;
+  min-width: 50vw;
+  max-width: 90vw;
+  background: rgba(55,55,70,.25);
+  background: radial-gradient(rgba(55,55,70,.25), rgba(55,55,70,.5)); 
+  margin: 5vh auto;
+  padding: 1em 0;
 }
 
-.App-link {
-  color: #61dafb;
+.wrapper > * {
+  padding: 10px;
+  flex: 1 100%;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* .aside-1 .span {
+  display: inline-block;
+} */
+#temp {
+  font-size: 4em;
 }
+
+
+#condition_icon{
+  font-size: 10em;
+  text-align: center;
+  display: block;
+  margin: auto;
+}
+
+@media all and (min-width: 410px) {
+  .wrapper { max-width: 80vw}
+  
+  /* .aside-1 div .span {
+    min-width: 100px;
+    width: 20%;
+    border-left: 1px solid rgba(255, 255, 255, 0.75);
+  } */
+
+  /* .aside-1 div .span:first-child {
+    border-left: none;
+  } */
+}
+
+.input-city {
+	
+	
+	position:relative;
+	font-size: 1.5em;	
+	background: linear-gradient(21deg, #10abff, #1beabd);
+	padding: 3px;
+	
+	
+	display: inline-block;
+	
+	
+	border-radius: 9999em;
+	
+	
+	/* *:not(span) {
+		position: relative;
+		display: inherit;
+		border-radius: inherit;
+		margin: 0;
+		border: none;
+		outline: none;
+		padding: 0 .325em;
+		z-index: 1; 
+		
+		
+		&:focus + span {
+			opacity: 1;
+			transform: scale(1);
+		}
+	} */
+	
+	
+	/* span {
+		
+		transform: scale(.993, .94); 
+		transition: transform .5s, opacity .25s;
+		opacity: 0; 
+		position:absolute;
+		z-index: 0; 
+		margin:4px; 
+		left:0;
+		top:0;
+		right:0;
+		bottom:0;
+		border-radius: inherit;
+		pointer-events: none; 
+		
+		
+		box-shadow: inset 0 0 0 3px #fff,
+			0 0 0 4px #fff,
+			3px -3px 30px #1beabd, 
+			-3px 3px 30px #10abff;
+	} */
+	
+}
+
+.weather-form
+{
+text-align: center;
+
+}
+.weather-emoji
+{
+  font-size:100px;
+ 
+}
+.weather-box
+{
+  
+  /* border: 1px solid rgba(255, 255, 255, 0.7); */
+    padding: .5em 2em;
+    margin-top: 1em;
+    font-size: 1.1em;
+   
+  transition: .3s;
+
+}
+
+

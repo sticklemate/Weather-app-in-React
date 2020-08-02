@@ -1,3 +1,6 @@
+[![Build Status](https://travis-ci.org/sticklemate/Weather-app-in-React.svg?branch=master)](https://travis-ci.org/github/sticklemate/Weather-app-in-React)
+<br />
+
 This Weather App was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
